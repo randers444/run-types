@@ -1,0 +1,35 @@
+{
+  "name": "run-types",
+  "version": "1.0.0",
+  "description": "run types is a set of types for runtime typing",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/main.d.ts",
+  "main": "./dist/run-types.umd.js",
+  "module": "./dist/run-types.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/run-types.es.js",
+      "require": "./dist/run-types.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.0.1",
+    "vite-plugin-dts": "^4.3.0"
+  },
+  "dependencies": {
+    "tsc": "^2.0.4",
+    "vitest": "^2.1.6"
+  }
+}
