@@ -12,7 +12,8 @@
   "exports": {
     ".": {
       "import": "./dist/run-types.es.js",
-      "require": "./dist/run-types.umd.js"
+      "require": "./dist/run-types.umd.js",
+      "types": "./dist/main.d.ts"
     }
   },
   "scripts": {
