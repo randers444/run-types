@@ -13,5 +13,5 @@ export default defineConfig({
       fileName: (format) => `${LIBRARY_NAME}.${format}.js`
     }
   },
-  plugins: [dts()]
+  plugins: [dts({exclude: "**/*.spec.ts"})]
 });

@@ -11,9 +11,10 @@
   "module": "./dist/run-types.es.js",
   "exports": {
     ".": {
+      "types": "./dist/main.d.ts",
       "import": "./dist/run-types.es.js",
-      "require": "./dist/run-types.umd.js",
-      "types": "./dist/main.d.ts"
+      "require": "./dist/run-types.umd.js"
+      
     }
   },
   "scripts": {

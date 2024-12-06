@@ -9,6 +9,10 @@ const EMPTY_VALUE = "empty" as const;
 
 export type EmptyType = ValueTypeType<typeof EMPTY_VALUE>;
 
+const ANY_VALUE = "any" as const;
+
+export type AnyType = ValueTypeType<typeof ANY_VALUE>;
+
 type ConstraintName = string;
 
 export type ValidationSuccess = {
@@ -465,7 +469,9 @@ export const isAssignableTo: (
     case INTERSECTION_VALUE:
       return isAssignableToIntersection(type, context);
     case EMPTY_VALUE:
+    case ANY_VALUE:
       return () => VALID;
+
   }
 };
 
@@ -495,6 +501,8 @@ function toString(type: ValueType): string {
       return `intersection [${toStringList(type.members)}]`;
     case EMPTY_VALUE:
       return `[empty]`;
+    case ANY_VALUE:
+      return `[any]`;
   }
 }
 
@@ -536,4 +544,5 @@ export type ValueType =
   | TupleType
   | UnionType
   | IntersectionType
-  | EmptyType;
+  | EmptyType
+  | AnyType;
